@@ -46,13 +46,6 @@ app.get('/', (request, response) => {
 app.get("/filter/:id", () => {
     const collection = db.collection('productos');
     collection.find({
-        $or: [{
-                platform: 'Origin'
-            },
-            {
-                platform: 'Epic',
-            }
-        ],
 
 
     }).toArray((err, docs) => {

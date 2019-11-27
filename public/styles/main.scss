@@ -29,7 +29,7 @@ body {
     background: rgb(90, 3, 189);
     font-family: "regular";
     font-weight: lighter;
-    margin-bottom: 140px;
+    margin-bottom: 180px;
 }
 
 header {
@@ -43,9 +43,10 @@ footer {
     width: 100%;
     background: #7F32FF;
     color: #fff;
-    height: 120px;
+    height: 140px;
     position: absolute;
     bottom: 0;
+
 
     & div {
         display: flex;
@@ -53,21 +54,18 @@ footer {
         align-items: center;
         width: 80%;
         margin: auto;
-        margin-top: 13px;
-
-        
-
+        margin-top: 30px;
     }
-    
-   
+
+
 
 }
 
-.logofooter{
+.logofooter {
     width: 200px;
 }
 
-.madeby{
+.madeby {
     font-size: smaller;
     width: 80%;
     display: flex;
@@ -583,6 +581,3 @@ label:before {
 .listorder {
     cursor: pointer;
 }
-
-
-
