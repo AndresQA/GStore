@@ -1,0 +1,178 @@
+<header>
+    <div class="mainnav">
+        <div class="mainnav__logo">
+            <a href="/productos">
+                <img src="/images/logo.png" class="mainnav__logoimg" alt="">
+            </a>
+        </div>
+
+        <div class="mainnav__logohamb">
+            <div>
+                <img src="" class="mainnav__logoimg" alt="">
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="/productos">Catálogo</a></li>
+                <li><a href="#characteristics">Más vendidos</a></li>
+                <li><a href="#galery">Ofertas</a></li>
+            </ul>
+
+        </nav>
+        <input type="search" class="mainnav__search" placeholder="Buscar...">
+        <div class="mainnav__options">
+            <img src="/images/userimg.png" class="mainnav__img" alt="">
+        </div>
+        <div class="mainnav__logo">
+
+            <div class="cartandcount">
+                <a href="/carro_de_compras">
+                    <img src="/images/car.png" class="mainnav__img" alt="">
+                    <p class="counter_products"></p>
+                </a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</header>
+
+
+<div class="bodycontentcart">
+
+    <h2>Carrito de compras</h2>
+
+
+
+    <div class="cartrow">
+
+        <div class="Packshot">
+            <h3>Packshot</h3>
+        </div>
+        <div class="nameproduct">
+            <h3>Nombre del producto</h3>
+        </div>
+        <div class="priceproduct">
+            <h3>Precio</h3>
+        </div>
+
+    </div>
+    {{#each products}}
+
+    <div class="cartrow">
+
+        <div class="Packshot">
+            <a href="/juego/{{title}}">
+                <img src="{{img}}" alt="">
+            </a>
+        </div>
+        <div class="nameproduct">
+            <a href="/juego/{{title}}" target="_blank">
+                <p>{{title}}</p>
+            </a>
+        </div>
+        <div class="priceproduct">
+            <p><strong> ${{price}} </strong></p>
+        </div>
+
+    </div>
+
+    {{/each}}
+
+    <hr>
+
+
+    <div class="cartrow">
+        <div class="Packshot">
+        </div>
+        <div class="nameproduct">
+            <h2>Total: </h2>
+
+        </div>
+
+        <div class="priceproduct">
+            <p><Strong>$$$$$</Strong></p>
+        </div>
+
+    </div>
+
+    <h2>Metodo de pago</h2>
+
+    <div class="paymentinfopersonal">
+
+        <div>
+            <p>Nombre completo</p>
+            <input type="text">
+        </div>
+
+        <div>
+            <p>Correo electronico</p>
+            <input type="text">
+        </div>
+
+    </div>
+
+    <div class="paymentinfopersonal">
+
+        <div>
+            <p>N° de tarjeta</p>
+            <input type="text">
+        </div>
+
+        <div class="paymentinfopersonal__creditcard">
+            <div>
+                <p>Codigo CVV</p>
+                <input type="text">
+            </div>
+
+            <div>
+                <p>Fecha de vencimiento</p>
+                <select>
+                    <option>Mes</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <select>
+                    <option>Año</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                </select>
+            </div>
+
+        </div>
+
+
+    </div>
+
+<a href="#" class="buttonshop">
+    <div>
+        <p> <strong>Damelo!!</strong></p>
+    </div>
+
+</a>
+
+
+
+
+</div>
