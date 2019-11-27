@@ -6,7 +6,7 @@ const express = require('express');
 
 const MongoClient = require('mongodb').MongoClient;
 
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb+srv://AndresQA:icarus0712@cluster0-1obzw.mongodb.net/taller2?retryWrites=true&w=majority';
 const dbName = 'taller2';
 const client = MongoClient(url);
 
@@ -200,7 +200,7 @@ app.get('/carro_de_compras', (request, response) => {
 
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Servidor iniciado en el puerto ${port}`);
 });
 
