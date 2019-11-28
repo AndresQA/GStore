@@ -8,7 +8,7 @@
 
         <div class="mainnav__logohamb">
             <div>
-                <img src="" class="mainnav__logoimg" alt="">
+                <img src="/images/menu.png" class="mainnav__logoimg" alt="">
             </div>
         </div>
 
@@ -52,36 +52,78 @@
             <div class="content__filter">
 
                 <h3>Plataforma</h3>
-                <input class="filter-option" type="checkbox" name="checkbox" value="Plataforma/steam" id="steam">
-                <label for="steam">Steam</label>
+
+                {{#if filtros.Steam }}
+                <input checked class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Steam"
+                    id="Steam">
+                {{else}}
+                <input class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Steam" id="Steam">
+                {{/if}}
+
+                <label for="Steam">Steam</label>
                 <br>
-                <input class="filter-option" type="checkbox" name="checkbox" value="Plataforma/origin" id="origin">
-                <label for="origin">Origin</label>
+                {{#if filtros.Origin}}
+                <input checked class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Origin"
+                    id="Origin">
+                {{else}}
+                <input class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Origin" id="Origin">
+                {{/if}}
+                <label for="Origin">Origin</label>
                 <br>
-                <input class="filter-option" type="checkbox" name="checkbox" value="Plataforma/epic" id="epic">
-                <label for="epic">Epic Games Store</label>
+                {{#if filtros.Epic}}
+                <input checked class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Epic" id="Epic">
+                {{else}}
+                <input class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Epic" id="Epic">
+                {{/if}}
+                <label for="Epic">Epic Games Store</label>
                 <br>
 
                 <h3>Genero</h3>
+                {{#if filtros.FPS}}
+                <input checked class="filter-option" type="checkbox" name="checkbox" value="Genero/FPS" id="FPS">
+                {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Genero/FPS" id="FPS">
+                {{/if}}
                 <label for="FPS">FPS</label>
                 <br>
+                {{#if filtros.Carreras}}
+                <input checked class="filter-option" type="checkbox" name="checkbox" value="Genero/Carreras"
+                    id="Carreras">
+                {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Genero/Carreras" id="Carreras">
+                {{/if}}
                 <label for="Carreras">Carreras</label>
                 <br>
+                {{#if filtros.RPG}}
+                <input checked class="filter-option" type="checkbox" name="checkbox" value="Genero/RPG" id="RPG">
+                {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Genero/RPG" id="RPG">
+                {{/if}}
                 <label for="RPG">RPG</label>
                 <br>
+                {{#if filtros.Aventura}}
+                <input checked class="filter-option" type="checkbox" name="checkbox" value="Genero/Aventura"
+                    id="Aventura">
+                {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Genero/Aventura" id="Aventura">
+                {{/if}}
                 <label for="Aventura">Aventura</label>
                 <br>
 
                 <h3>Tipo</h3>
+                {{#if filtros.Juego}}
+                <input checked class="filter-option" type="checkbox" name="checkbox" value="Tipo/Juego" id="Juego">
+                {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Tipo/Juego" id="Juego">
+                {{/if}}
                 <label for="Juego">Juego</label>
                 <br>
-                <input class="filter-option" type="checkbox" name="checkbox" value="Tipo/DlC" id="DlC">
-                <label for="DlC">DlC</label>
+                {{#if filtros.DLC}}
+                <input checked class="filter-option" type="checkbox" name="checkbox" value="Tipo/DLC" id="DLC">
+                {{else}}
+                <input class="filter-option" type="checkbox" name="checkbox" value="Tipo/DLC" id="DLC">
+                {{/if}}
+                <label for="DLC">DlC</label>
                 <br>
 
 
@@ -99,13 +141,32 @@
                 </div>
 
                 <div class="orderlistview">
-                    <input class="" type="checkbox" name="checkbox" value="" id="lestomost">
+                    {{#if filtros.Mayor}}
+                    <input checked class="filter-order" class="" type="radio" name="precio" value="price/1"
+                        id="lestomost">
+                    {{else}}
+                    <input class="filter-order" class="" type="radio" name="precio" value="price/1" id="lestomost">
+                    {{/if }}
                     <label for="lestomost">Precio: Bajo a alto</label>
-                    <input class="" type="checkbox" name="checkbox" value="" id="mosttoles">
+                    {{#if filtros.Menor}}
+                    <input checked class="filter-order" class="" type="radio" name="precio" value="price/-1" id="mosttoles">
+                    {{else}}
+                    <input class="filter-order" class="" type="radio" name="precio" value="price/-1" id="mosttoles">
+                    {{/if}}
                     <label for="mosttoles">Precio: Alto a bajo</label>
-                    <input class="" type="checkbox" name="checkbox" value="" id="mostpopular">
+                    {{#if filtros.P}}
+                    <input checked class="filter-order" class="" type="radio" name="precio" value="popularity/1"
+                        id="mostpopular">
+                    {{else}}
+                    <input class="filter-order" class="" type="radio" name="precio" value="popularity/1"
+                        id="mostpopular">
+                    {{/if}}
                     <label for="mostpopular">Lo mas popular primero</label>
-                    <input class="" type="checkbox" name="checkbox" value="" id="recent">
+                    {{#if filtros.Years}}
+                    <input checked class="filter-order" class="" type="radio" name="precio" value="year/-1" id="recent">
+                    {{else}}
+                    <input class="filter-order" class="" type="radio" name="precio" value="year/-1" id="recent">
+                    {{/if}}
                     <label for="recent">Lanzamiento mas reciente</label>
                 </div>
 
@@ -143,7 +204,7 @@
     </div>
 
 
-    <script src="/scripts/filter.js"></script>
+    
 
 
 

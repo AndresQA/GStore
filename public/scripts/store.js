@@ -78,22 +78,19 @@ window.addEventListener('load', function () {
 
 
     });
+
+
+
     var open = false;
     var cliks =0;
 
-    var btn_listorder = document.querySelector('.listorder');
-    btn_listorder.addEventListener('click', function (event) {
+    const openFilters = ()=>{
         
-
         if (open === false) {
             var openlistorder = document.querySelector('.orderlistview');
             openlistorder.style.display = "block";
-            var animation = document.querySelector('.orderlistview');
-            animation.classList.add('animated', 'bounceIn')
-
-            animation.addEventListener('animationend', function () {
-                animation.classList.remove('animated', 'bounceIn')
-            })
+      
+         
             
             cliks++;
         }
@@ -111,6 +108,42 @@ window.addEventListener('load', function () {
 
         console.log(open)
         console.log(cliks)
+    }
+
+
+
+    function replaceAll(str, find, replace) {
+        return str.replace(new RegExp(find, 'g'), replace);
+    }
+
+
+
+    var params = location.href.split("/");
+    if (params[4]) {
+        var dataUrl = params[4];
+        var dataUrlstring = replaceAll(dataUrl, "%22", '"');
+        dataUrlstring = replaceAll(dataUrlstring, "%7B", '{');
+        dataUrlstring = replaceAll(dataUrlstring, "%7D", '}');
+
+        var dataObject = JSON.parse(dataUrlstring);
+       
+
+        orders = dataObject.order;
+
+        if(orders !== "NNN"){
+            openFilters()
+        }
+    }
+
+    
+
+
+    
+
+    var btn_listorder = document.querySelector('.listorder');
+    btn_listorder.addEventListener('click', function (event) {
+        openFilters();
+
     });
 
 

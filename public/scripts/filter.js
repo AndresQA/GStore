@@ -1,19 +1,12 @@
 window.addEventListener("load", () => {
-    /*
-        var steam = document.querySelector("#steam");
-        var origin = document.querySelector("#origin");
-        var epic = document.querySelector("#epic");
-        var FPS = document.querySelector("#FPS");
-        var Carreras = document.querySelector("#Carreras");
-        var RPG = document.querySelector("#RPG");
-        var Aventura = document.querySelector("#Aventura");
-        var Juego = document.querySelector("#Juego");
-        var DlC = document.querySelector("#DlC");
-    
+
+
 
     var filterManager = new FilterManager();
 
     var fitros = document.querySelectorAll(".filter-option");
+
+    var orders = document.querySelectorAll(".filter-order");
 
     var query = {
         filter: {},
@@ -21,6 +14,17 @@ window.addEventListener("load", () => {
         filter3: {}
     };
 
+    orders.forEach((filtro, i) => {
+
+        filtro.addEventListener("click", () => {
+            var item = filtro.value.split("/");
+
+            filterManager.setOrder(item[0], item[1]);
+
+            location.href = "/productos/" + JSON.stringify(filterManager.generateQuery());
+
+        })
+    })
 
 
 
@@ -63,19 +67,49 @@ window.addEventListener("load", () => {
 
 });
 
-/*
+
 class FilterManager {
 
     constructor() {
         this.filters = [];
+        this.orders = "NNN";
         this.query = {};
+
+
+        function replaceAll(str, find, replace) {
+            return str.replace(new RegExp(find, 'g'), replace);
+        }
+
+
         var params = location.href.split("/");
-        console.log(params);
-        params.forEach(p=>{
-         
-        })
-        console.log(params[4]);
-    
+        if (params[4]) {
+            var dataUrl = params[4];
+            var dataUrlstring = replaceAll(dataUrl, "%22", '"');
+            dataUrlstring = replaceAll(dataUrlstring, "%7B", '{');
+            dataUrlstring = replaceAll(dataUrlstring, "%7D", '}');
+
+            var dataObject = JSON.parse(dataUrlstring);
+            dataObject.first.forEach((d) => {
+                this.addFilter(d.tipo, d.value);
+            });
+            dataObject.second.forEach((d) => {
+                this.addFilter(d.tipo, d.value);
+            });
+            dataObject.third.forEach((d) => {
+                this.addFilter(d.tipo, d.value);
+            });
+
+            this.orders = dataObject.order;
+            
+        }
+
+    }
+
+    setOrder(tipo, value) {
+        this.orders = {
+            tipo: tipo,
+            value: value
+        }
     }
 
     addFilter(tipo, value) {
@@ -110,10 +144,11 @@ class FilterManager {
 
 
     generateQuery() {
+        var first = [];
+        var second = [];
+        var third = [];
         if (this.filters.length > 0) {
-            var first = [];
-            var second = [];
-            var third = [];
+
 
             var firstType = "";
             var secondType = "";
@@ -124,11 +159,11 @@ class FilterManager {
                     firstType = filter.tipo;
                 }
 
-                if(filter.tipo != firstType && secondType == ""){
+                if (filter.tipo != firstType && secondType == "") {
                     secondType = filter.tipo;
                 }
 
-                if(filter.tipo != firstType && filter.tipo != secondType && secondType != "" && thirdType == ""){
+                if (filter.tipo != firstType && filter.tipo != secondType && secondType != "" && thirdType == "") {
                     thirdType = filter.tipo;
                 }
 
@@ -140,20 +175,19 @@ class FilterManager {
                     second.push(filter);
                 }
 
-                if(thirdType == filter.tipo){
+                if (thirdType == filter.tipo) {
                     third.push(filter);
                 }
             });
+        }
 
-            this.query = {
-                first:first,
-                second:second,
-                third:third
-            }
-
+        this.query = {
+            first: first,
+            second: second,
+            third: third,
+            order: this.orders
         }
 
         return this.query;
     }
 }
-*/
