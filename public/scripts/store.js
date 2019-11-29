@@ -88,7 +88,7 @@ window.addEventListener('load', function () {
         
         if (open === false) {
             var openlistorder = document.querySelector('.orderlistview');
-            openlistorder.style.display = "block";
+            openlistorder.style.display = "flex";
       
          
             
@@ -105,9 +105,6 @@ window.addEventListener('load', function () {
             cliks =0
             open = false;
         }
-
-        console.log(open)
-        console.log(cliks)
     }
 
 

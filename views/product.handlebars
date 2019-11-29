@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li><a href="/productos">Catálogo</a></li>
-                <li><a href="#characteristics">Más vendidos</a></li>
+                <li><a href="/productos/{{sort.year:-1}}">Más vendidos</a></li>
                 <li><a href="#galery">Ofertas</a></li>
             </ul>
 
@@ -60,7 +60,7 @@
                 <input class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Steam" id="Steam">
                 {{/if}}
 
-                <label for="Steam">Steam</label>
+                <label class="filterlabel" for="Steam">Steam</label>
                 <br>
                 {{#if filtros.Origin}}
                 <input checked class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Origin"
@@ -68,14 +68,14 @@
                 {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Origin" id="Origin">
                 {{/if}}
-                <label for="Origin">Origin</label>
+                <label class="filterlabel" for="Origin">Origin</label>
                 <br>
                 {{#if filtros.Epic}}
                 <input checked class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Epic" id="Epic">
                 {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Plataforma/Epic" id="Epic">
                 {{/if}}
-                <label for="Epic">Epic Games Store</label>
+                <label class="filterlabel" for="Epic">Epic Games Store</label>
                 <br>
 
                 <h3>Genero</h3>
@@ -84,7 +84,7 @@
                 {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Genero/FPS" id="FPS">
                 {{/if}}
-                <label for="FPS">FPS</label>
+                <label class="filterlabel" for="FPS">FPS</label>
                 <br>
                 {{#if filtros.Carreras}}
                 <input checked class="filter-option" type="checkbox" name="checkbox" value="Genero/Carreras"
@@ -92,14 +92,14 @@
                 {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Genero/Carreras" id="Carreras">
                 {{/if}}
-                <label for="Carreras">Carreras</label>
+                <label class="filterlabel" for="Carreras">Carreras</label>
                 <br>
                 {{#if filtros.RPG}}
                 <input checked class="filter-option" type="checkbox" name="checkbox" value="Genero/RPG" id="RPG">
                 {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Genero/RPG" id="RPG">
                 {{/if}}
-                <label for="RPG">RPG</label>
+                <label class="filterlabel" for="RPG">RPG</label>
                 <br>
                 {{#if filtros.Aventura}}
                 <input checked class="filter-option" type="checkbox" name="checkbox" value="Genero/Aventura"
@@ -107,7 +107,7 @@
                 {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Genero/Aventura" id="Aventura">
                 {{/if}}
-                <label for="Aventura">Aventura</label>
+                <label class="filterlabel" for="Aventura">Aventura</label>
                 <br>
 
                 <h3>Tipo</h3>
@@ -116,14 +116,14 @@
                 {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Tipo/Juego" id="Juego">
                 {{/if}}
-                <label for="Juego">Juego</label>
+                <label class="filterlabel" for="Juego">Juego</label>
                 <br>
                 {{#if filtros.DLC}}
                 <input checked class="filter-option" type="checkbox" name="checkbox" value="Tipo/DLC" id="DLC">
                 {{else}}
                 <input class="filter-option" type="checkbox" name="checkbox" value="Tipo/DLC" id="DLC">
                 {{/if}}
-                <label for="DLC">DlC</label>
+                <label class="filterlabel" for="DLC">DlC</label>
                 <br>
 
 
@@ -141,6 +141,7 @@
                 </div>
 
                 <div class="orderlistview">
+                    <div>
                     {{#if filtros.Mayor}}
                     <input checked class="filter-order" class="" type="radio" name="precio" value="price/1"
                         id="lestomost">
@@ -148,12 +149,18 @@
                     <input class="filter-order" class="" type="radio" name="precio" value="price/1" id="lestomost">
                     {{/if }}
                     <label for="lestomost">Precio: Bajo a alto</label>
+                    </div>
+
+                    <div>
                     {{#if filtros.Menor}}
                     <input checked class="filter-order" class="" type="radio" name="precio" value="price/-1" id="mosttoles">
                     {{else}}
                     <input class="filter-order" class="" type="radio" name="precio" value="price/-1" id="mosttoles">
                     {{/if}}
                     <label for="mosttoles">Precio: Alto a bajo</label>
+                    </div>
+
+                    <div>
                     {{#if filtros.P}}
                     <input checked class="filter-order" class="" type="radio" name="precio" value="popularity/1"
                         id="mostpopular">
@@ -162,12 +169,18 @@
                         id="mostpopular">
                     {{/if}}
                     <label for="mostpopular">Lo mas popular primero</label>
+                        
+                    </div>
+
+                    <div>
                     {{#if filtros.Years}}
                     <input checked class="filter-order" class="" type="radio" name="precio" value="year/-1" id="recent">
                     {{else}}
                     <input class="filter-order" class="" type="radio" name="precio" value="year/-1" id="recent">
                     {{/if}}
                     <label for="recent">Lanzamiento mas reciente</label>
+                    </div>
+                    
                 </div>
 
 

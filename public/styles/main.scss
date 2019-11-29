@@ -42,6 +42,7 @@ footer {
     margin-top: 50px;
     width: 100%;
     background: #7F32FF;
+    font-size: 10px;
     color: #fff;
     height: 140px;
     position: absolute;
@@ -179,6 +180,7 @@ input.mainnav__search:focus {
 }
 
 .content__productsorder {
+    width: 100%;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -197,12 +199,12 @@ input.mainnav__search:focus {
     display: none;
 }
 
-label {
+.filterlabel {
     padding-left: 1.3em;
     position: relative;
 }
 
-label:before {
+.filterlabel:before {
     content: ' ';
     border: solid 1px #FF0B6B;
     border-radius: 3px;
@@ -215,7 +217,7 @@ label:before {
     transform: rotate(0deg);
 }
 
-[type="checkbox"]:checked+label:before {
+[type="checkbox"]:checked+.filterlabel:before {
     border-color: #FF0B6B;
     color: #FF0B6B;
     content: '\f00c';
