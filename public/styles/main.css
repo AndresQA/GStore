@@ -627,19 +627,4 @@ input.mainnav__search:focus {
 .listorder {
   cursor: pointer;
 }
-
-@media (max-width: 1312px) {
-  nav ul li {
-    display: block;
-    float: none;
-    margin: 15px 0;
-    position: relative;
-  }
-  header input {
-    display: none;
-  }
-  .mainnav__options {
-    display: none;
-  }
-}
 /*# sourceMappingURL=main.css.map */
