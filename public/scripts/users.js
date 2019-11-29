@@ -1,12 +1,8 @@
 window.addEventListener('load', function () {
 
-    var btn_listorder = document.querySelector('.listorder');
-    btn_listorder.addEventListener('click', function (event) {
-        openFilters();
 
-    });
 
-    var btn = document.querySelector("#entrar");
+    var btn = document.querySelector("#buyit");
 
     btn.addEventListener('click', function () {
         var nom = document.querySelector('#inp5').value;
